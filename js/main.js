@@ -1,13 +1,13 @@
 const projects = Object.freeze([
     {
-    title: "Solar Skid Design",
-    category: "Mechanical Design / CAD Drafting",
-    filterCategory: "mechanical cad modeling",
-    description: "A mechanical skid concept showing layout, rendering, and technical drawing presentation.",
+        title: "Solar Skid Design",
+        category: "Mechanical Design / CAD Drafting",
+        filterCategory: "mechanical cad modeling",
+        description:
+            "A mechanical skid concept showing layout, rendering, and technical drawing presentation.",
+        caseStudy: "solar-skid-case-study.html",
 
-    caseStudy: "solar-skid-case-study.html",
-
-    images: [
+        images: [
             {
                 title: "Skid Rendering",
                 file: "assets/images/portfolio/skid-rendering.jpg"
@@ -17,6 +17,7 @@ const projects = Object.freeze([
                 file: "assets/images/portfolio/skid-drawing.jpg"
             }
         ],
+
         pdfs: [
             {
                 title: "Solar Skid Rendering PDF",
@@ -29,7 +30,9 @@ const projects = Object.freeze([
         title: "3D CAD Modeling Samples",
         category: "3D Modeling / CAD",
         filterCategory: "cad modeling mechanical",
-        description: "Sample 3D CAD modeling, capture, wireframe, and rendering outputs.",
+        description:
+            "Sample 3D CAD modeling, capture, wireframe, and rendering outputs.",
+
         images: [
             {
                 title: "3D CAD Design",
@@ -52,6 +55,7 @@ const projects = Object.freeze([
                 file: "assets/images/portfolio/rendering.jpg"
             }
         ],
+
         pdfs: [
             {
                 title: "Drawing Sample Portfolio",
@@ -61,67 +65,167 @@ const projects = Object.freeze([
     }
 ]);
 
+const documents = Object.freeze([
+    {
+        title: "Professional Resume",
+        category: "Resume / CV",
+        description:
+            "Professional mechanical CAD drafting and engineering resume.",
+        file: "assets/files/resume/Daren-Sombilon-Resume.pdf"
+    },
+
+    {
+        title: "Drawing Sample Portfolio",
+        category: "Engineering Portfolio",
+        description:
+            "Selected CAD models, drawings, and technical presentation samples.",
+        file: "assets/files/portfolio/Drawing-Sample-Portfolio.pdf"
+    }
+]);
+
+/* =========================================================
+   PORTFOLIO PROJECTS
+========================================================= */
+
 const portfolioContainer = document.getElementById("portfolioProjects");
 
 if (portfolioContainer) {
-    portfolioContainer.innerHTML = projects.map(project => `
-        <div class="project-showcase-card" data-category="${project.filterCategory}">
-            <div class="project-header">
-                <span>${project.category}</span>
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-            </div>
+    portfolioContainer.innerHTML = projects
+        .map(
+            (project) => `
+                <div
+                    class="project-showcase-card"
+                    data-category="${project.filterCategory}"
+                >
+                    <div class="project-header">
+                        <span>${project.category}</span>
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                    </div>
 
-            <div class="project-section-box">
-                <h4>Image Gallery</h4>
-                <div class="portfolio-gallery">
-${project.images.map(image => `
-    <a href="${image.file}" class="portfolio-card lightbox-trigger">
-        <img
-            src="${image.file}"
-            alt="${image.title}"
-            loading="lazy"
-        >
-        <h5>${image.title}</h5>
-        <span>View Image</span>
-    </a>
-`).join("")}
-                </div>
-            </div>
+                    <div class="project-section-box">
+                        <h4>Image Gallery</h4>
 
-            <div class="project-section-box">
-                <h4>PDF Documents</h4>
-                <div class="pdf-grid">
-                    ${project.pdfs.map(pdf => `
-                        <a href="${pdf.file}" target="_blank" rel="noopener noreferrer" class="pdf-card">
-                            <h5>${pdf.title}</h5>
-                            <p>Technical document / drawing package.</p>
-                            <span>View PDF</span>
-                        </a>
-                    `).join("")}
+                        <div class="portfolio-gallery">
+                            ${project.images
+                                .map(
+                                    (image) => `
+                                        <a
+                                            href="${image.file}"
+                                            class="portfolio-card lightbox-trigger"
+                                        >
+                                            <img
+                                                src="${image.file}"
+                                                alt="${image.title}"
+                                                loading="lazy"
+                                            >
+
+                                            <h5>${image.title}</h5>
+                                            <span>View Image</span>
+                                        </a>
+                                    `
+                                )
+                                .join("")}
+                        </div>
+                    </div>
+
+                    <div class="project-section-box">
+                        <h4>PDF Documents</h4>
+
+                        <div class="pdf-grid">
+                            ${project.pdfs
+                                .map(
+                                    (pdf) => `
+                                        <a
+                                            href="${pdf.file}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="pdf-card"
+                                        >
+                                            <h5>${pdf.title}</h5>
+
+                                            <p>
+                                                Technical document / drawing
+                                                package.
+                                            </p>
+
+                                            <span>View PDF</span>
+                                        </a>
+                                    `
+                                )
+                                .join("")}
+                        </div>
+                    </div>
+
+                    ${
+                        project.caseStudy
+                            ? `
+                                <div class="project-section-box">
+                                    <h4>Full Case Study</h4>
+
+                                    <a
+                                        href="${project.caseStudy}"
+                                        class="pdf-card"
+                                    >
+                                        <h5>${project.title}</h5>
+
+                                        <p>
+                                            View the full project story,
+                                            design process, gallery, and
+                                            outcome.
+                                        </p>
+
+                                        <span>View Case Study</span>
+                                    </a>
+                                </div>
+                            `
+                            : ""
+                    }
                 </div>
-            </div>
-                        ${project.caseStudy ? `
-                <div class="project-section-box">
-                    <h4>Full Case Study</h4>
-                    <a href="${project.caseStudy}" class="pdf-card">
-                        <h5>${project.title}</h5>
-                        <p>View the full project story, design process, gallery, and outcome.</p>
-                        <span>View Case Study</span>
-                    </a>
-                </div>
-            ` : ""}
-        </div>
-    `).join("");
+            `
+        )
+        .join("");
 }
 
-/* PAGE LOADED HOOK */
+/* =========================================================
+   DOCUMENTS
+========================================================= */
 
-window.addEventListener("load", () => {
+const documentsContainer = document.getElementById(
+    "documentsContainer"
+);
+
+if (documentsContainer) {
+    documentsContainer.innerHTML = documents
+        .map(
+            (documentItem) => `
+                <a
+                    href="${documentItem.file}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card"
+                >
+                    <span>${documentItem.category}</span>
+                    <h3>${documentItem.title}</h3>
+                    <p>${documentItem.description}</p>
+                    <strong>View Document</strong>
+                </a>
+            `
+        )
+        .join("");
+}
+
+/* =========================================================
+   PAGE LOADED HOOK
+========================================================= */
+
+window.addEventListener("load", function () {
     document.body.classList.add("loaded");
 });
 
-/* ANIMATED STATISTICS COUNTER */
+/* =========================================================
+   ANIMATED STATISTICS COUNTER
+========================================================= */
 
 const counters = document.querySelectorAll(".counter");
 
@@ -171,11 +275,24 @@ if (counters.length > 0) {
     });
 }
 
-/* SCROLL REVEAL ANIMATION */
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+========================================================= */
 
 const revealElements = document.querySelectorAll(
-    ".card, .process-card, .why-card, .skill-card, .pricing-card, .testimonial-card, .stat-card, .case-study-card, .project-showcase-card, .document-card, .project-list-item"
+    ".card, " +
+        ".process-card, " +
+        ".why-card, " +
+        ".skill-card, " +
+        ".pricing-card, " +
+        ".testimonial-card, " +
+        ".stat-card, " +
+        ".case-study-card, " +
+        ".project-showcase-card, " +
+        ".document-card, " +
+        ".project-list-item"
 );
+
 if (revealElements.length > 0) {
     revealElements.forEach(function (element) {
         element.classList.add("reveal");
@@ -199,7 +316,9 @@ if (revealElements.length > 0) {
     });
 }
 
-/* BACK TO TOP BUTTON */
+/* =========================================================
+   BACK TO TOP BUTTON
+========================================================= */
 
 const backToTopButton = document.getElementById("backToTop");
 
@@ -220,7 +339,9 @@ if (backToTopButton) {
     });
 }
 
-/* SMART NAVBAR */
+/* =========================================================
+   SMART NAVBAR
+========================================================= */
 
 const navbar = document.getElementById("navbar");
 
@@ -234,19 +355,18 @@ if (navbar) {
     });
 }
 
-/* ACTIVE NAVIGATION HIGHLIGHT */
+/* =========================================================
+   ACTIVE NAVIGATION HIGHLIGHT
+========================================================= */
 
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".navbar nav a");
 
 if (sections.length > 0 && navLinks.length > 0) {
-
     window.addEventListener("scroll", function () {
-
-        let current = "";
+        let currentSection = "";
 
         sections.forEach(function (section) {
-
             const sectionTop = section.offsetTop - 140;
             const sectionHeight = section.offsetHeight;
 
@@ -254,38 +374,56 @@ if (sections.length > 0 && navLinks.length > 0) {
                 window.scrollY >= sectionTop &&
                 window.scrollY < sectionTop + sectionHeight
             ) {
-                current = section.getAttribute("id");
+                currentSection = section.getAttribute("id");
             }
-
         });
 
         navLinks.forEach(function (link) {
+            const href = link.getAttribute("href") || "";
 
             link.classList.remove("active");
 
-            const href = link.getAttribute("href") || "";
-
             if (
-                href === "#" + current ||
-                href.endsWith("#" + current)
+                currentSection &&
+                (
+                    href === "#" + currentSection ||
+                    href.endsWith("#" + currentSection)
+                )
             ) {
                 link.classList.add("active");
             }
-
         });
-
     });
-
 }
 
-/* PORTFOLIO FILTER SYSTEM */
+/* =========================================================
+   PORTFOLIO FILTER SYSTEM
+========================================================= */
 
 const filterButtons = document.querySelectorAll(".filter-btn");
-const filterableProjects = document.querySelectorAll(
-    ".project-showcase-card, .project-list-item"
-);
 
-if (filterButtons.length > 0 && filterableProjects.length > 0) {
+function applyPortfolioFilter(filterValue) {
+    const filterableProjects = document.querySelectorAll(
+        ".project-showcase-card, .project-list-item"
+    );
+
+    filterableProjects.forEach(function (project) {
+        const categories = (
+            project.dataset.category || ""
+        )
+            .toLowerCase()
+            .split(/\s+/)
+            .filter(Boolean);
+
+        const shouldShow =
+            filterValue === "all" ||
+            categories.includes(filterValue);
+
+        project.style.display = shouldShow ? "" : "none";
+    });
+}
+
+if (filterButtons.length > 0) {
     filterButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             filterButtons.forEach(function (filterButton) {
@@ -298,19 +436,57 @@ if (filterButtons.length > 0 && filterableProjects.length > 0) {
                 button.dataset.filter || "all"
             ).toLowerCase();
 
-            filterableProjects.forEach(function (project) {
-                const categories = (
-                    project.dataset.category || ""
-                )
-                    .toLowerCase()
-                    .split(/\s+/);
-
-                project.style.display =
-                    filterValue === "all" ||
-                    categories.includes(filterValue)
-                        ? ""
-                        : "none";
-            });
+            applyPortfolioFilter(filterValue);
         });
     });
 }
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+
+function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.src = "";
+    document.body.classList.remove("lightbox-open");
+}
+
+document.addEventListener("click", function (event) {
+    const imageLink = event.target.closest(".lightbox-trigger");
+
+    if (!imageLink || !lightbox || !lightboxImage) return;
+
+    event.preventDefault();
+
+    lightboxImage.src = imageLink.getAttribute("href");
+    lightboxImage.alt =
+        imageLink.querySelector("img")?.alt || "Portfolio Preview";
+
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
+});
+
+if (lightboxClose) {
+    lightboxClose.addEventListener("click", closeLightbox);
+}
+
+if (lightbox) {
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
