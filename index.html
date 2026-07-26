@@ -962,18 +962,37 @@ fabrication and installation activities.
    </div>
 
    <div class="home-documents-grid">
-    <article class="home-document-card">
+    <article class="home-document-card portfolio-document-card">
      <div class="home-document-icon" aria-hidden="true">▣</div>
      <span class="home-document-type">ENGINEERING PORTFOLIO</span>
-     <h3>Engineering Portfolio</h3>
+     <h3>Daren Engineering Portfolio</h3>
      <p>
-      Selected mechanical design, CAD modelling, fabrication drawing,
-      and engineering documentation work.
+      A curated presentation of mechanical design, CAD modelling,
+      fabrication drawings, industrial projects, and engineering documentation.
+      Suitable for client introductions and professional job applications.
      </p>
-     <div class="home-document-actions">
-      <a class="btn-primary" href="portfolio.html">View Portfolio</a>
-      <a class="btn-secondary" href="portfolio.html#documents">View Documents</a>
+     <div class="document-request-meta" aria-label="Portfolio document information">
+      <span>PDF Document</span>
+      <span>Selected Projects</span>
      </div>
+     <div class="home-document-actions portfolio-file-actions">
+      <a class="btn-primary portfolio-file-link"
+         href="assets/files/portfolio/Daren-Sombilon-Engineering-Portfolio.pdf"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-file-candidates="assets/files/portfolio/Daren-Sombilon-Engineering-Portfolio.pdf|assets/files/Daren-Sombilon-Engineering-Portfolio.pdf|assets/files/Engineering-Portfolio.pdf|assets/files/Drawing-Sample-Portfolio.pdf">
+       Open Portfolio PDF
+      </a>
+      <a class="btn-secondary portfolio-file-link"
+         href="assets/files/portfolio/Daren-Sombilon-Engineering-Portfolio.pdf"
+         download="Daren-Sombilon-Engineering-Portfolio.pdf"
+         data-file-candidates="assets/files/portfolio/Daren-Sombilon-Engineering-Portfolio.pdf|assets/files/Daren-Sombilon-Engineering-Portfolio.pdf|assets/files/Engineering-Portfolio.pdf|assets/files/Drawing-Sample-Portfolio.pdf">
+       Download PDF
+      </a>
+     </div>
+     <small class="portfolio-purpose-note">
+      Prepared for client review, recruitment, and engineering job applications.
+     </small>
     </article>
 
     <article class="home-document-card is-preparation">
@@ -1006,18 +1025,26 @@ fabrication and installation activities.
      </div>
     </article>
 
-    <article class="home-document-card is-request">
+    <article class="home-document-card is-request drawing-request-card">
      <div class="home-document-icon" aria-hidden="true">△</div>
-     <span class="home-document-type">TECHNICAL SAMPLES</span>
+     <span class="home-document-type">TECHNICAL DRAWING REQUEST</span>
      <h3>Engineering Drawing Samples</h3>
      <p>
-      This package is currently being prepared. Share the drawing type,
-      industry, or project information you would like to review.
+      Drawing samples are prepared according to your industry,
+      project requirements, and confidentiality needs.
+      Share a brief description and relevant examples can be prepared for review.
      </p>
+     <div class="document-request-meta" aria-label="Drawing sample availability">
+      <span>PDF Package</span>
+      <span>On Request</span>
+     </div>
      <div class="document-status">In Preparation</div>
      <a class="btn-primary document-request-btn" href="request.html">
-      Discuss Your Request
+      Request Drawing Samples
      </a>
+     <small class="document-request-note">
+      Samples are shared after understanding your project requirements.
+     </small>
     </article>
    </div>
   </section>
@@ -1155,6 +1182,51 @@ local and international clients.
     resetHeroMotion();
    })();
   </script>
+  
+<script>
+(() => {
+    const links = document.querySelectorAll(".portfolio-file-link[data-file-candidates]");
+    if (!links.length) return;
+
+    const resolved = new Map();
+
+    async function findExistingPath(candidates) {
+        const key = candidates.join("|");
+        if (resolved.has(key)) return resolved.get(key);
+
+        for (const path of candidates) {
+            try {
+                const response = await fetch(path, {
+                    method: "HEAD",
+                    cache: "no-store"
+                });
+
+                if (response.ok) {
+                    resolved.set(key, path);
+                    return path;
+                }
+            } catch (_) {
+                // Continue to the next known legacy location.
+            }
+        }
+
+        const fallback = candidates[0];
+        resolved.set(key, fallback);
+        return fallback;
+    }
+
+    links.forEach(async (link) => {
+        const candidates = link.dataset.fileCandidates
+            .split("|")
+            .map((item) => item.trim())
+            .filter(Boolean);
+
+        const path = await findExistingPath(candidates);
+        link.href = path;
+    });
+})();
+</script>
+
   <script defer src="js/main.js">
   </script>
  </body>

@@ -6424,3 +6424,295 @@ textarea:focus-visible {
     }
 }
 
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V8 DRAWING SAMPLE REQUEST
+   Request-based Engineering Drawing Samples treatment.
+   Keep this block at the END of style.css.
+========================================================= */
+
+/* ---------- SHARED REQUEST CARD VISUAL ---------- */
+
+.drawing-request-card,
+.document-card-request {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(37, 99, 235, 0.22);
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(219, 234, 254, 0.78),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(248, 250, 252, 0.98)
+        );
+}
+
+.drawing-request-card::before,
+.document-card-request::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 118px;
+    height: 118px;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 46%,
+            rgba(37, 99, 235, 0.08) 47%,
+            rgba(37, 99, 235, 0.08) 49%,
+            transparent 50%
+        );
+}
+
+.drawing-request-card:hover,
+.document-card-request:hover {
+    border-color: rgba(37, 99, 235, 0.38);
+    box-shadow:
+        0 26px 68px rgba(15, 23, 42, 0.11),
+        0 0 0 1px rgba(37, 99, 235, 0.04);
+}
+
+/* ---------- HOMEPAGE DOCUMENT CARD ---------- */
+
+.document-request-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 14px;
+}
+
+.document-request-meta span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.drawing-request-card .document-status {
+    margin-top: 0;
+}
+
+.document-request-note {
+    display: block;
+    margin-top: 13px;
+    color: #64748b;
+    font-size: 11.5px;
+    line-height: 1.55;
+}
+
+/* ---------- PORTFOLIO DOCUMENT CARD ---------- */
+
+.document-card-request .document-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.document-card-request .document-content > p {
+    margin-bottom: 20px;
+}
+
+.document-preparation-status {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+    margin-bottom: 17px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #fff7ed;
+    color: #c2410c;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+.document-status-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #f97316;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+}
+
+.document-request-actions {
+    margin-top: auto;
+}
+
+.document-request-actions .btn-primary {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    white-space: nowrap;
+}
+
+.document-confidentiality-note {
+    margin: 14px 0 0 !important;
+    color: #64748b !important;
+    font-size: 11.5px !important;
+    line-height: 1.55 !important;
+}
+
+/* Ensure card height and action placement remain balanced */
+.document-grid .document-card {
+    height: 100%;
+}
+
+.document-grid .document-content {
+    min-width: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 640px) {
+    .document-request-actions,
+    .document-request-actions .btn-primary {
+        width: 100%;
+    }
+
+    .document-request-actions .btn-primary {
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V9 PORTFOLIO FILE RETENTION
+   Keeps the Engineering Portfolio prominent for clients,
+   recruitment, and job applications.
+========================================================= */
+
+.portfolio-document-card {
+    border-color: rgba(148, 163, 184, 0.34);
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(219, 234, 254, 0.46),
+            transparent 34%
+        ),
+        rgba(255, 255, 255, 0.96);
+}
+
+.portfolio-document-card h3,
+.portfolio-document-card .document-content h3 {
+    color: #172033;
+    font-weight: 600;
+    letter-spacing: -0.022em;
+}
+
+.portfolio-document-card p,
+.portfolio-document-card .document-content > p {
+    color: #475569;
+    font-weight: 400;
+    line-height: 1.68;
+}
+
+.portfolio-file-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.portfolio-file-actions .btn-primary,
+.portfolio-file-actions .btn-secondary {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.portfolio-file-actions .btn-primary {
+    background: #111827;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+.portfolio-file-actions .btn-secondary {
+    border: 1px solid #cbd5e1;
+    background: rgba(255, 255, 255, 0.90);
+    color: #172033;
+}
+
+.portfolio-file-actions .btn-primary:hover,
+.portfolio-file-actions .btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.portfolio-file-actions .btn-primary:hover {
+    background: #1e293b;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+}
+
+.portfolio-file-actions .btn-secondary:hover {
+    border-color: #94a3b8;
+    background: #ffffff;
+}
+
+.portfolio-purpose-note {
+    display: block;
+    margin-top: 14px;
+    color: #64748b;
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+.home-document-card.portfolio-document-card {
+    min-height: 410px;
+}
+
+.document-card.portfolio-document-card .document-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Apple/Tesla-inspired restraint:
+   dark enough for confidence, but not excessively heavy. */
+.document-card h3,
+.home-document-card h3 {
+    font-weight: 600;
+}
+
+.document-card p,
+.home-document-card p {
+    font-weight: 400;
+}
+
+.document-meta span,
+.document-request-meta span,
+.document-type,
+.home-document-type {
+    font-weight: 500;
+}
+
+@media (max-width: 640px) {
+    .portfolio-file-actions,
+    .portfolio-file-actions .btn-primary,
+    .portfolio-file-actions .btn-secondary {
+        width: 100%;
+    }
+}
+
