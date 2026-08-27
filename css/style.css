@@ -7218,3 +7218,214 @@ a.request-service-cta:focus-visible {
         -webkit-text-fill-color: #ffffff !important;
     }
 }
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V14 CTA + MOBILE HERO ACTIONS
+   - Request Service matches Contact Me for maximum readability
+   - Hero actions remain unchanged on desktop
+   - All four hero buttons are visible on mobile without pinch/zoom
+========================================================= */
+
+/* ---------- CONTACT CTA: MATCH CONTACT ME ---------- */
+
+.contact-footer-band .contact-section .contact-actions a.request-service-cta,
+.contact-section .contact-actions a.request-service-cta,
+a.request-service-cta,
+a.request-service-cta:link,
+a.request-service-cta:visited,
+a.request-service-cta:hover,
+a.request-service-cta:active,
+a.request-service-cta:focus {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border: 1px solid #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    box-shadow: 0 12px 28px rgba(2, 6, 23, 0.22) !important;
+}
+
+.contact-footer-band .contact-section .contact-actions a.request-service-cta span,
+.contact-section .contact-actions a.request-service-cta span,
+a.request-service-cta span,
+a.request-service-cta:link span,
+a.request-service-cta:visited span,
+a.request-service-cta:hover span,
+a.request-service-cta:active span,
+a.request-service-cta:focus span {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-weight: 600 !important;
+}
+
+.contact-footer-band .contact-section .contact-actions a.request-service-cta:hover,
+.contact-footer-band .contact-section .contact-actions a.request-service-cta:focus-visible,
+.contact-section .contact-actions a.request-service-cta:hover,
+.contact-section .contact-actions a.request-service-cta:focus-visible {
+    background: #dbeafe !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    border-color: #dbeafe !important;
+}
+
+/* ---------- HERO ACTIONS: DESKTOP STAYS AS-IS ---------- */
+
+/* Tablet: keep a clean, centered wrap */
+@media (max-width: 900px) {
+    .interactive-industrial-hero .hero-actions,
+    .hero .hero-actions {
+        width: min(100%, 620px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        overflow: visible !important;
+        padding-bottom: 0 !important;
+    }
+
+    .interactive-industrial-hero .hero-actions .btn-primary,
+    .interactive-industrial-hero .hero-actions .btn-secondary,
+    .hero .hero-actions .btn-primary,
+    .hero .hero-actions .btn-secondary {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 46px !important;
+        padding: 11px 12px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Phone: all 4 actions visible in the first viewport width */
+@media (max-width: 680px) {
+    .interactive-industrial-hero .hero-actions,
+    .hero .hero-actions {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        scrollbar-width: none !important;
+    }
+
+    .interactive-industrial-hero .hero-actions::-webkit-scrollbar,
+    .hero .hero-actions::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .interactive-industrial-hero .hero-actions .btn-primary,
+    .interactive-industrial-hero .hero-actions .btn-secondary,
+    .hero .hero-actions .btn-primary,
+    .hero .hero-actions .btn-secondary {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 46px !important;
+        padding: 11px 8px !important;
+        font-size: 11.5px !important;
+        white-space: normal !important;
+        text-align: center !important;
+    }
+}
+
+/* Very small phones: stack for readability, still no horizontal zoom */
+@media (max-width: 400px) {
+    .interactive-industrial-hero .hero-actions,
+    .hero .hero-actions {
+        grid-template-columns: 1fr !important;
+    }
+
+    .interactive-industrial-hero .hero-actions .btn-primary,
+    .interactive-industrial-hero .hero-actions .btn-secondary,
+    .hero .hero-actions .btn-primary,
+    .hero .hero-actions .btn-secondary {
+        font-size: 12.5px !important;
+    }
+}
+
+
+/* =========================================================
+   V15 — CONTACT CTA FIX
+   Uses dedicated markup so generic .btn-secondary rules
+   cannot override Request Service anymore.
+========================================================= */
+
+.contact-section .contact-actions {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-wrap:wrap !important;
+    gap:12px !important;
+    margin-top:28px !important;
+}
+
+.contact-section .contact-cta-button,
+.contact-section .contact-cta-button:link,
+.contact-section .contact-cta-button:visited {
+    min-width:142px !important;
+    min-height:46px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:11px 20px !important;
+    border:1px solid #ffffff !important;
+    border-radius:999px !important;
+    background:#ffffff !important;
+    color:#0f172a !important;
+    -webkit-text-fill-color:#0f172a !important;
+    font-size:13px !important;
+    font-weight:600 !important;
+    line-height:1 !important;
+    text-decoration:none !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    box-shadow:0 12px 28px rgba(2,6,23,.22) !important;
+    transition:transform .24s ease, background-color .24s ease, box-shadow .24s ease !important;
+}
+
+.contact-section .contact-cta-button:hover,
+.contact-section .contact-cta-button:focus-visible,
+.contact-section .contact-cta-button:active {
+    background:#dbeafe !important;
+    border-color:#dbeafe !important;
+    color:#0f172a !important;
+    -webkit-text-fill-color:#0f172a !important;
+    transform:translateY(-2px) !important;
+    box-shadow:0 16px 34px rgba(2,6,23,.28) !important;
+}
+
+/* Mobile: both buttons remain inside viewport with no zoom required */
+@media (max-width:760px) {
+    .contact-section .contact-actions {
+        width:min(100%,430px) !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px !important;
+    }
+
+    .contact-section .contact-cta-button,
+    .contact-section .contact-cta-button:link,
+    .contact-section .contact-cta-button:visited {
+        width:100% !important;
+        min-width:0 !important;
+        padding:11px 10px !important;
+        white-space:normal !important;
+        text-align:center !important;
+    }
+}
+
+@media (max-width:420px) {
+    .contact-section .contact-actions {
+        grid-template-columns:1fr !important;
+    }
+}
