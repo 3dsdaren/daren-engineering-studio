@@ -7429,3 +7429,76 @@ a.request-service-cta:focus span {
         grid-template-columns:1fr !important;
     }
 }
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V16 MOBILE BUTTON FIT
+   Mobile-only button sizing refinements.
+   Desktop/tablet layouts remain unchanged.
+========================================================= */
+
+@media (max-width: 680px) {
+
+    /* Top/navigation CTA: "Let's Discuss Your Project" */
+    .navbar > .btn-primary,
+    .navbar .btn-primary,
+    .nav-cta,
+    .header-cta {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 40px !important;
+        padding: 9px 12px !important;
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+        white-space: normal !important;
+        text-align: center !important;
+    }
+
+    /* Portfolio featured-project action buttons */
+    .case-study-actions {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+    }
+
+    .case-study-actions .btn-primary,
+    .case-study-actions .btn-secondary {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 42px !important;
+        padding: 9px 8px !important;
+        font-size: 11.5px !important;
+        line-height: 1.15 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        overflow-wrap: anywhere !important;
+    }
+}
+
+@media (max-width: 420px) {
+
+    /* Keep portfolio buttons tidy on narrow phones */
+    .case-study-actions {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 7px !important;
+    }
+
+    .case-study-actions .btn-primary,
+    .case-study-actions .btn-secondary {
+        min-height: 40px !important;
+        padding: 8px 6px !important;
+        font-size: 10.8px !important;
+    }
+
+    /* Make the main navigation CTA compact rather than wrapping too tall */
+    .navbar > .btn-primary,
+    .navbar .btn-primary,
+    .nav-cta,
+    .header-cta {
+        min-height: 38px !important;
+        padding: 8px 10px !important;
+        font-size: 10.5px !important;
+    }
+}
