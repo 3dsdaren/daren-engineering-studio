@@ -7502,3 +7502,95 @@ a.request-service-cta:focus span {
         font-size: 10.5px !important;
     }
 }
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V17 MOBILE NAV CTA POLISH
+   Mobile-only refinement for the top "Let's Discuss Your Project" CTA.
+   Desktop remains unchanged.
+========================================================= */
+
+@media (max-width: 680px) {
+
+    /* Center the primary navbar CTA and give it a strong dark-navy treatment */
+    .navbar > .btn-primary,
+    .navbar .btn-primary,
+    .nav-cta,
+    .header-cta {
+        width: fit-content !important;
+        max-width: calc(100% - 28px) !important;
+        min-width: 0 !important;
+        min-height: 44px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 11px 16px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        border: 1px solid rgba(255,255,255,.10) !important;
+        border-radius: 999px !important;
+        background: #0f172a !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        line-height: 1.1 !important;
+        white-space: normal !important;
+        text-align: center !important;
+
+        box-shadow: 0 10px 24px rgba(15,23,42,.18) !important;
+
+        /* Better touch responsiveness */
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+        user-select: none !important;
+
+        transition:
+            transform 160ms ease,
+            background-color 160ms ease,
+            box-shadow 160ms ease !important;
+    }
+
+    .navbar > .btn-primary:active,
+    .navbar .btn-primary:active,
+    .nav-cta:active,
+    .header-cta:active {
+        transform: scale(.98) !important;
+        background: #111827 !important;
+        box-shadow: 0 6px 16px rgba(15,23,42,.16) !important;
+    }
+
+    .navbar > .btn-primary:focus-visible,
+    .navbar .btn-primary:focus-visible,
+    .nav-cta:focus-visible,
+    .header-cta:focus-visible {
+        outline: 3px solid rgba(96,165,250,.30) !important;
+        outline-offset: 3px !important;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .navbar > .btn-primary,
+    .navbar .btn-primary,
+    .nav-cta,
+    .header-cta {
+        min-height: 42px !important;
+        padding: 10px 14px !important;
+        font-size: 11px !important;
+        max-width: calc(100% - 20px) !important;
+    }
+}
+
+/* Respect reduced motion for a smoother low-power/mobile experience */
+@media (prefers-reduced-motion: reduce) and (max-width: 680px) {
+    .navbar > .btn-primary,
+    .navbar .btn-primary,
+    .nav-cta,
+    .header-cta {
+        transition: none !important;
+    }
+}
