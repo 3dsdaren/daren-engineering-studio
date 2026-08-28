@@ -7594,3 +7594,406 @@ a.request-service-cta:focus span {
         transition: none !important;
     }
 }
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V18 PORTFOLIO IMAGE HERO
+   Uses engineering-portfolio-background.png
+   Industrial/cement plant left + architectural metalwork right.
+   Portfolio page only; other pages remain unchanged.
+========================================================= */
+
+.portfolio-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: min(calc(100% - 32px), 1440px) !important;
+    min-height: clamp(500px, 72vh, 760px) !important;
+    margin: 18px auto 48px !important;
+    padding:
+        clamp(150px, 16vh, 190px)
+        clamp(28px, 6vw, 88px)
+        clamp(74px, 10vh, 110px) !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(148, 163, 184, .28);
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 18, 32, .72) 0%,
+            rgba(5, 18, 32, .50) 31%,
+            rgba(5, 18, 32, .38) 50%,
+            rgba(5, 18, 32, .45) 72%,
+            rgba(5, 18, 32, .58) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 18, 32, .12) 0%,
+            rgba(5, 18, 32, .22) 100%
+        ),
+        url("images/engineering-portfolio-background.png")
+        center center / cover no-repeat;
+
+    box-shadow:
+        0 30px 70px rgba(15, 23, 42, .18),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.portfolio-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(7, 20, 38, .16) 0%,
+            rgba(7, 20, 38, .30) 38%,
+            rgba(7, 20, 38, .08) 72%
+        );
+}
+
+.portfolio-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 820px) !important;
+    margin-inline: auto;
+    padding: clamp(26px, 4vw, 44px);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 26px;
+    background: rgba(5, 18, 32, .28);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 18px 55px rgba(2,6,23,.18);
+}
+
+.portfolio-hero .section-tag {
+    color: #bfdbfe !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: .16em !important;
+    text-shadow: 0 2px 14px rgba(2,6,23,.55);
+}
+
+.portfolio-hero h1 {
+    color: #ffffff !important;
+    max-width: 760px !important;
+    font-size: clamp(42px, 5.2vw, 68px) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 4px 24px rgba(2,6,23,.58);
+}
+
+.portfolio-hero .portfolio-hero-description {
+    color: #e5edf8 !important;
+    max-width: 700px !important;
+    font-weight: 400 !important;
+    text-shadow: 0 2px 16px rgba(2,6,23,.72);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .portfolio-hero {
+        width: calc(100% - 24px) !important;
+        min-height: 570px !important;
+        margin-top: 12px !important;
+        padding:
+            132px
+            24px
+            68px !important;
+        border-radius: 24px;
+        background-position: center center;
+    }
+
+    .portfolio-hero .hero-content {
+        width: min(100%, 700px) !important;
+        padding: 30px 24px;
+    }
+}
+
+/* Mobile: preserve the image but prioritize readable text and viewport fit */
+@media (max-width: 680px) {
+    .portfolio-hero {
+        width: calc(100% - 16px) !important;
+        min-height: 520px !important;
+        margin: 8px auto 34px !important;
+        padding:
+            112px
+            14px
+            48px !important;
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5,18,32,.58) 0%,
+                rgba(5,18,32,.66) 48%,
+                rgba(5,18,32,.72) 100%
+            ),
+            url("images/engineering-portfolio-background.png")
+            55% center / cover no-repeat;
+    }
+
+    .portfolio-hero .hero-content {
+        width: 100% !important;
+        padding: 24px 18px;
+        border-radius: 20px;
+        background: rgba(5,18,32,.42);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+    }
+
+    .portfolio-hero h1 {
+        font-size: clamp(34px, 10.5vw, 46px) !important;
+        line-height: 1.06 !important;
+        letter-spacing: -.04em !important;
+    }
+
+    .portfolio-hero .portfolio-hero-description {
+        font-size: 14px !important;
+        line-height: 1.62 !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .portfolio-hero {
+        min-height: 500px !important;
+        padding-top: 104px !important;
+    }
+
+    .portfolio-hero .hero-content {
+        padding: 22px 15px;
+    }
+}
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V20 CLEAR PORTFOLIO BACKGROUND
+   Keep the engineering image sharp and recognizable.
+========================================================= */
+
+.portfolio-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 18, 32, .24) 0%,
+            rgba(5, 18, 32, .10) 35%,
+            rgba(5, 18, 32, .06) 52%,
+            rgba(5, 18, 32, .10) 72%,
+            rgba(5, 18, 32, .20) 100%
+        ),
+        url("images/engineering-portfolio-background.png")
+        center center / cover no-repeat !important;
+}
+
+/* Remove the dark veil that was softening the whole photograph. */
+.portfolio-hero::after {
+    background: transparent !important;
+}
+
+/* Keep only a restrained readable panel behind the heading.
+   No backdrop blur: the photograph remains optically sharp. */
+.portfolio-hero .hero-content {
+    background: rgba(5, 18, 32, .54) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    border: 1px solid rgba(255,255,255,.20) !important;
+    box-shadow: 0 18px 46px rgba(2,6,23,.20) !important;
+}
+
+/* Text remains readable without washing out the image. */
+.portfolio-hero h1 {
+    color: #ffffff !important;
+    text-shadow: 0 3px 14px rgba(2,6,23,.72) !important;
+}
+
+.portfolio-hero .section-tag,
+.portfolio-hero .portfolio-hero-description {
+    text-shadow: 0 2px 10px rgba(2,6,23,.78) !important;
+}
+
+/* Mobile: retain image clarity while adding only enough contrast for text. */
+@media (max-width: 680px) {
+    .portfolio-hero {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5,18,32,.24) 0%,
+                rgba(5,18,32,.30) 100%
+            ),
+            url("images/engineering-portfolio-background.png")
+            55% center / cover no-repeat !important;
+    }
+
+    .portfolio-hero .hero-content {
+        background: rgba(5,18,32,.62) !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+}
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V21 PORTFOLIO BACKGROUND CLEAN
+   ONLY CHANGE:
+   - Portfolio hero uses the actual image directly
+   - No blur / frosted panel / washed-out overlay
+   - Image path: assets/images/engineering-portfolio-background.png
+========================================================= */
+
+.portfolio-hero {
+    background:
+        url("assets/images/engineering-portfolio-background.png")
+        center center / cover no-repeat !important;
+}
+
+/* Remove all hero-wide veils and blur effects. */
+.portfolio-hero::after {
+    content: none !important;
+    background: none !important;
+}
+
+/* Remove the frosted/grey text panel so the actual image remains visible. */
+.portfolio-hero .hero-content {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Keep text readable directly over the photograph without obscuring the image. */
+.portfolio-hero .section-tag {
+    color: #dbeafe !important;
+    text-shadow:
+        0 2px 8px rgba(2,6,23,.95),
+        0 0 18px rgba(2,6,23,.55) !important;
+}
+
+.portfolio-hero h1 {
+    color: #ffffff !important;
+    text-shadow:
+        0 3px 10px rgba(2,6,23,.96),
+        0 0 26px rgba(2,6,23,.58) !important;
+}
+
+.portfolio-hero .portfolio-hero-description {
+    color: #f1f5f9 !important;
+    text-shadow:
+        0 2px 8px rgba(2,6,23,.98),
+        0 0 18px rgba(2,6,23,.62) !important;
+}
+
+/* Mobile keeps the same real image with no blur. */
+@media (max-width: 680px) {
+    .portfolio-hero {
+        background:
+            url("assets/images/engineering-portfolio-background.png")
+            55% center / cover no-repeat !important;
+    }
+
+    .portfolio-hero .hero-content {
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+}
+
+
+/* =========================================================
+   DAREN ENGINEERING STUDIO — V22 PORTFOLIO BACKGROUND PATH FIX
+   IMPORTANT:
+   portfolio.html loads: css/style.css
+   Therefore image URLs inside style.css must be relative to /css/.
+   Correct path:
+   ../assets/images/engineering-portfolio-background.png
+========================================================= */
+
+.portfolio-page .portfolio-hero {
+    position: relative !important;
+    isolation: isolate !important;
+
+    background-color: #0b2745 !important;
+    background-image:
+        url("../assets/images/engineering-portfolio-background.png") !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+
+    /* Preserve the wide portfolio hero already established */
+    overflow: hidden !important;
+}
+
+/* No blur, washout, grey veil, or frosted layer over the actual photograph. */
+.portfolio-page .portfolio-hero::before,
+.portfolio-page .portfolio-hero::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+}
+
+.portfolio-page .portfolio-hero::after {
+    content: none !important;
+    display: none !important;
+}
+
+.portfolio-page .portfolio-hero .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+}
+
+/* Text contrast only — this does not cover or blur the background image. */
+.portfolio-page .portfolio-hero .section-tag {
+    color: #e0ecff !important;
+    text-shadow:
+        0 2px 7px rgba(2, 6, 23, .95),
+        0 0 16px rgba(2, 6, 23, .55) !important;
+}
+
+.portfolio-page .portfolio-hero h1 {
+    color: #ffffff !important;
+    text-shadow:
+        0 3px 9px rgba(2, 6, 23, .95),
+        0 0 22px rgba(2, 6, 23, .55) !important;
+}
+
+.portfolio-page .portfolio-hero .portfolio-hero-description {
+    color: #f1f5f9 !important;
+    text-shadow:
+        0 2px 7px rgba(2, 6, 23, .95),
+        0 0 15px rgba(2, 6, 23, .55) !important;
+}
+
+/* Mobile keeps the real image and simply shifts the crop slightly
+   so both the industrial and architectural sides remain useful. */
+@media (max-width: 680px) {
+    .portfolio-page .portfolio-hero {
+        background-image:
+            url("../assets/images/engineering-portfolio-background.png") !important;
+        background-position: 55% center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .portfolio-page .portfolio-hero .hero-content {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+}
